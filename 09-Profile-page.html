@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Umbrella - My Profile</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Apply Inter as the default font */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom dark header background from screenshot */
+        .profile-header-bg {
+            background-color: #1a1a1a;
+            /* A subtle pattern similar to the screenshot */
+            background-image: linear-gradient(45deg, #333 25%, transparent 25%), 
+                              linear-gradient(-45deg, #333 25%, transparent 25%), 
+                              linear-gradient(45deg, transparent 75%, #333 75%), 
+                              linear-gradient(-45deg, transparent 75%, #333 75%);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="flex flex-col lg:flex-row min-h-screen">
+        
+        <!-- Sidebar / Navigation -->
+        <!-- This time, "Profile" is the active item -->
+        <aside class="w-full lg:w-64 bg-white shadow-lg 
+                       order-2 lg:order-1 
+                       fixed bottom-0 left-0 z-50 lg:relative lg:h-screen 
+                       border-t border-gray-200 lg:border-t-0 lg:border-r">
+            
+            <!-- Logo (Desktop Only) -->
+            <div class="hidden lg:flex items-center justify-center h-20 shadow-sm space-x-2">
+                <!-- UPDATED Logo Path -->
+                <img src="assets/central-logo.jpg" 
+                     onerror="this.src='https://placehold.co/100x40/FFFFFF/4F46E5?text=HU&font=inter'"
+                     alt="Health Umbrella Logo" 
+                     class="h-10">
+                <span class="text-xl font-bold text-gray-800">Health Umbrella</span>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="flex justify-around lg:flex-col lg:mt-8">
+                
+                <!-- Nav Item: Home -->
+                <a href="01-homepage.html" class="flex flex-col items-center justify-center p-3 lg:flex-row lg:justify-start lg:px-6 lg:py-4 
+                                  text-gray-600 hover:bg-gray-100 hover:text-gray-900">
+                    <!-- Home Icon -->
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                    <span class="text-xs mt-1 lg:text-base lg:mt-0 lg:ml-4">Home</span>
+                </a>
+
+                <!-- Nav Item: Wallet (REMOVED) -->
+                
+                <!-- Nav Item: My Bookings -->
+                <a href="08-booking-view.html" class="flex flex-col items-center justify-center p-3 lg:flex-row lg:justify-start lg:px-6 lg:py-4 
+                                  text-gray-600 hover:bg-gray-100 hover:text-gray-900">
+                    <!-- Calendar Icon -->
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+                    <span class="text-xs mt-1 lg:text-base lg:mt-0 lg:ml-4">My Bookings</span>
+                </a>
+
+                <!-- Nav Item: Call Us (NEW) -->
+                <a href="10-call-us.html" class="flex flex-col items-center justify-center p-3 lg:flex-row lg:justify-start lg:px-6 lg:py-4 
+                                  text-gray-600 hover:bg-gray-100 hover:text-gray-900">
+                    <!-- Phone Icon -->
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <span class="text-xs mt-1 lg:text-base lg:mt-0 lg:ml-4">Call Us</span>
+                </a>
+
+                <!-- Nav Item: Profile (Active) -->
+                <a href="09-profile-page.html" class="flex flex-col items-center justify-center p-3 lg:flex-row lg:justify-start lg:px-6 lg:py-4 
+                                  text-blue-600 font-semibold bg-blue-50 
+                                  lg:border-r-4 lg:border-blue-500">
+                    <!-- User Icon -->
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    <span class="text-xs mt-1 lg:text-base lg:mt-0 lg:ml-4">Profile</span>
+                </a>
+
+                <!-- Nav Item: Logout (NEW) -->
+                <a href="00-login-page.html" class="flex flex-col items-center justify-center p-3 lg:flex-row lg:justify-start lg:px-6 lg:py-4 
+                                  text-gray-600 hover:bg-gray-100 hover:text-gray-900">
+                    <!-- Logout Icon -->
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                    <span class="text-xs mt-1 lg:text-base lg:mt-0 lg:ml-4">Logout</span>
+                </a>
+
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 order-1 lg:order-2 
+                     pb-24 lg:pb-0"> <!-- Padding at bottom for mobile nav -->
+            
+            <!-- Profile Header -->
+            <header class="profile-header-bg h-40 lg:h-56 flex items-center justify-center relative">
+                <h1 class="text-3xl lg:text-4xl font-bold text-white">My Profile</h1>
+            </header>
+
+            <!-- Profile Content -->
+            <div class="max-w-2xl mx-auto p-4 md:p-8 -mt-16">
+                
+                <!-- Profile Card -->
+                <section class="bg-white rounded-lg shadow-xl p-6 flex flex-col items-center text-center mb-8 relative">
+                    <!-- Profile Picture Placeholder -->
+                    <div class="w-32 h-32 rounded-full bg-gray-200 flex items-center justify-center -mt-20 border-4 border-white mb-4 relative">
+                        <svg class="w-20 h-20 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <!-- Edit Button -->
+                        <button class="absolute bottom-1 right-1 bg-indigo-600 text-white p-2 rounded-full shadow-md hover:bg-indigo-700">
+                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-900">Magesh</h2>
+                </section>
+
+                <!-- Profile Options List -->
+                <section class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <nav class="divide-y divide-gray-200">
+                        
+                        <!-- My Profile -->
+                        <a href="#" class="flex items-center p-5 text-gray-700 hover:bg-gray-50 transition-all">
+                            <svg class="w-6 h-6 text-gray-500 mr-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            <span class="text-base font-medium">My Profile</span>
+                            <svg class="w-5 h-5 text-gray-400 ml-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </a>
+
+                        <!-- Emergency Contact -->
+                        <a href="#" class="flex items-center p-5 text-gray-700 hover:bg-gray-50 transition-all">
+                            <svg class="w-6 h-6 text-gray-500 mr-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            <span class="text-base font-medium">Emergency Contact</span>
+                            <svg class="w-5 h-5 text-gray-400 ml-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </a>
+
+                        <!-- My Reports -->
+                        <a href="#" class="flex items-center p-5 text-gray-700 hover:bg-gray-50 transition-all">
+                            <svg class="w-6 h-6 text-gray-500 mr-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+                            <span class="text-base font-medium">My Reports</span>
+                            <svg class="w-5 h-5 text-gray-400 ml-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </a>
+
+                        <!-- Terms and Conditions -->
+                        <a href="#" class="flex items-center p-5 text-gray-700 hover:bg-gray-50 transition-all">
+                            <svg class="w-6 h-6 text-gray-500 mr-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                            <span class="text-base font-medium">Terms and Conditions</span>
+                            <svg class="w-5 h-5 text-gray-400 ml-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </a>
+
+                        <!-- Logout -->
+                        <a href="00-login-page.html" class="flex items-center p-5 text-red-600 hover:bg-red-50 transition-all">
+                            <svg class="w-6 h-6 text-red-500 mr-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                            <span class="text-base font-medium">Logout</span>
+                        </a>
+
+                    </nav>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Click Feedback Element -->
+    <div id="click-feedback" class="hidden fixed top-5 right-5 bg-blue-600 text-white p-3 rounded-lg shadow-lg z-50 transition-all duration-300">
+        <!-- Message will be inserted here by JS -->
+    </div>
+
+    <script>
+        // Simple script to provide feedback on click, without using alert()
+        
+        // Feedback element
+        const feedbackEl = document.getElementById('click-feedback');
+        
+        function showFeedback(message) {
+            feedbackEl.textContent = message;
+            feedbackEl.classList.remove('hidden', 'opacity-0');
+            feedbackEl.classList.add('opacity-100');
+
+            // Hide the message after 3 seconds
+            setTimeout(() => {
+                feedbackEl.classList.remove('opacity-100');
+                feedbackEl.classList.add('opacity-0');
+                // Wait for fade out before hiding
+                setTimeout(() => feedbackEl.classList.add('hidden'), 500);
+            }, 3000);
+        }
+
+        // Add listeners to profile options (except logout)
+        document.querySelectorAll('section.bg-white nav a').forEach(link => {
+            // Check if the link is the logout link
+            if (link.href.endsWith('00-login-page.html')) {
+                return; // Don't add feedback to the logout link
+            }
+            
+            link.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent navigation
+                const optionName = link.querySelector('span').textContent;
+                console.log('Clicked:', optionName);
+                showFeedback(`Loading ${optionName}... (Demo only)`);
+            });
+        });
+
+    </script>
+
+</body>
+</html>

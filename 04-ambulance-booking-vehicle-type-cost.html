@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Umbrella - Select Vehicle</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Apply Inter as the default font */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom styles for checked radio buttons (ambulance options) */
+        input[type="radio"].ambulance-option:checked + label {
+            border-color: #4F46E5; /* indigo-600 */
+            background-color: #EEF2FF; /* indigo-50 */
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="flex flex-col lg:flex-row min-h-screen">
+        
+        <!-- Sidebar / Navigation -->
+        <!-- This is the same navigation as the previous pages -->
+        <aside class="w-full lg:w-64 bg-white shadow-lg 
+                       order-2 lg:order-1 
+                       fixed bottom-0 left-0 z-50 lg:relative lg:h-screen 
+                       border-t border-gray-200 lg:border-t-0 lg:border-r">
+            
+            <!-- Logo (Desktop Only) -->
+            <div class="hidden lg:flex items-center justify-center h-20 shadow-sm space-x-2">
+                <!-- UPDATED Logo Path -->
+                <img src="assets/central-logo.jpg" 
+                     onerror="this.src='https://placehold.co/100x40/FFFFFF/4F46E5?text=HU&font=inter'"
+                     alt="Health Umbrella Logo" 
+                     class="h-10">
+                <span class="text-xl font-bold text-gray-800">Health Umbrella</span>
+            </div>
+
+            <!-- Navigation Menu -->
+            <!-- The "Home" item is active as this booking flow is part of the home section -->
+            <nav class="flex justify-around lg:flex-col lg:mt-8">
+                
+                <!-- Nav Item: Home (Active) -->
+                <a href="01-homepage.html" class="flex flex-col items-center justify-center p-3 lg:flex-row lg:justify-start lg:px-6 lg:py-4 
+                                  text-blue-600 font-semibold bg-blue-50 
+                                  lg:border-r-4 lg:border-blue-500">
+                    <!-- Home Icon -->
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                    <span class="text-xs mt-1 lg:text-base lg:mt-0 lg:ml-4">Home</span>
+                </a>
+
+                <!-- Nav Item: My Bookings -->
+                <a href="08-booking-view.html" class="flex flex-col items-center justify-center p-3 lg:flex-row lg:justify-start lg:px-6 lg:py-4 
+                                  text-gray-600 hover:bg-gray-100 hover:text-gray-900">
+                    <!-- Calendar Icon -->
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+                    <span class="text-xs mt-1 lg:text-base lg:mt-0 lg:ml-4">My Bookings</span>
+                </a>
+
+                <!-- Nav Item: Wallet (REMOVED) -->
+
+                <!-- Nav Item: Call Us (NEW) -->
+                <a href="10-call-us.html" class="flex flex-col items-center justify-center p-3 lg:flex-row lg:justify-start lg:px-6 lg:py-4 
+                                  text-gray-600 hover:bg-gray-100 hover:text-gray-900">
+                    <!-- Phone Icon -->
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <span class="text-xs mt-1 lg:text-base lg:mt-0 lg:ml-4">Call Us</span>
+                </a>
+
+                <!-- Nav Item: Profile (NEW) -->
+                <a href="09-profile-page.html" class="flex flex-col items-center justify-center p-3 lg:flex-row lg:justify-start lg:px-6 lg:py-4 
+                                  text-gray-600 hover:bg-gray-100 hover:text-gray-900">
+                    <!-- User Icon -->
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    <span class="text-xs mt-1 lg:text-base lg:mt-0 lg:ml-4">Profile</span>
+                </a>
+
+                <!-- Nav Item: Logout (NEW) -->
+                <a href="00-login-page.html" class="flex flex-col items-center justify-center p-3 lg:flex-row lg:justify-start lg:px-6 lg:py-4 
+                                  text-gray-600 hover:bg-gray-100 hover:text-gray-900">
+                    <!-- Logout Icon -->
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                    <span class="text-xs mt-1 lg:text-base lg:mt-0 lg:ml-4">Logout</span>
+                </a>
+
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 order-1 lg:order-2 
+                     p-4 md:p-8 
+                     pb-24 lg:pb-8"> <!-- Padding at bottom for mobile nav -->
+            
+            <!-- Header -->
+            <header class="flex justify-between items-center mb-6">
+                <!-- Welcome Message -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full bg-blue-200 flex items-center justify-center text-blue-600">
+                         <!-- User Icon -->
+                         <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    </div>
+                    <span class="text-lg md:text-xl font-semibold text-gray-800">Hi, Welcome Magesh</span>
+                </div>
+                
+                <!-- Header Icons -->
+                <div class="flex items-center space-x-3 md:space-x-5">
+                    <!-- Notification Bell -->
+                    <button class="p-2 rounded-full text-gray-600 hover:bg-gray-200 hover:text-gray-900 relative">
+                        <!-- Bell Icon -->
+                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                        <!-- Notification Dot -->
+                        <span class="absolute top-2 right-2 block w-2 h-2 bg-red-500 rounded-full"></span>
+                    </button>
+                    <!-- SOS Button -->
+                    <button class="p-2 rounded-full text-white bg-red-500 hover:bg-red-600 shadow-md">
+                        <!-- Alert Icon -->
+                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" x2="12" y1="9" y2="13"></line><line x1="12"x2="12.01" y1="17" y2="17"></line></svg>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <div class="max-w-2xl mx-auto">
+
+                <!-- Location Summary Card -->
+                <section class="mb-6 bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex">
+                        <!-- Icons -->
+                        <div class="flex flex-col items-center mr-4">
+                            <div class="w-5 h-5 rounded-full bg-green-500 border-2 border-green-200"></div>
+                            <div class="w-px flex-1 border-l-2 border-dashed border-gray-300 my-2"></div>
+                            <div class="w-5 h-5 rounded-full bg-red-500 border-2 border-red-200"></div>
+                        </div>
+                        <!-- Details -->
+                        <div class="flex-1 space-y-4">
+                            <!-- Pickup Location -->
+                            <div>
+                                <p class="text-xs text-gray-500 uppercase font-medium">Pickup</p>
+                                <p class="font-semibold text-gray-900 leading-snug">Sai ram apartments, 96, Arcot Rd, Venkata Subramanya Nagar, ...</p>
+                            </div>
+                            <!-- Drop-off Location -->
+                            <div>
+                                <p class="text-xs text-gray-500 uppercase font-medium">Dropoff</p>
+                                <p class="font-semibold text-gray-900 leading-snug">MIOT International, Manapakkam, Chennai, Tamil Nadu</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Map Placeholder -->
+                <section class="mb-8 rounded-lg shadow-md overflow-hidden relative border-4 border-white">
+                    <img src="https://placehold.co/800x600/E0E7FF/4F46E5?text=Live+Map+View+Placeholder" 
+                         alt="Map showing route from pickup to dropoff" 
+                         class="w-full h-64 md:h-96 object-cover">
+                    
+                    <!-- Refresh Button -->
+                    <button class="absolute top-4 right-4 bg-white p-3 rounded-full shadow-lg text-indigo-600 hover:bg-gray-50 transition-all">
+                        <!-- Refresh Icon -->
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+                    </button>
+                </section>
+
+                <!-- Select an Ambulance -->
+                <section>
+                    <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4">Select an Ambulance</h2>
+                    
+                    <!-- Category Header -->
+                    <div class="bg-white rounded-lg shadow-sm p-4 flex justify-between items-center mb-4">
+                        <div class="flex items-center space-x-3">
+                            <img src="https://placehold.co/40x40/EBF8FF/3182CE?text=Amb" alt="Ambulance Icon" class="w-10 h-10 rounded-lg">
+                            <span class="font-semibold text-gray-800">Patient Transfer</span>
+                        </div>
+                        <button class="p-2 text-gray-500">
+                            <!-- Chevron Up Icon -->
+                            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+                        </button>
+                    </div>
+
+                    <!-- Ambulance Options -->
+                    <div class="space-y-4">
+                        
+                        <!-- Option: Small -->
+                        <div>
+                            <input type="radio" name="ambulance_type" id="amb_small" class="hidden ambulance-option" checked>
+                            <label for="amb_small" class="block bg-white rounded-lg shadow-sm p-4 border-2 border-transparent cursor-pointer transition-all duration-300">
+                                <div class="flex space-x-3">
+                                    <div class="flex-shrink-0 w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-xs">25</div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between items-start">
+                                            <div class="flex items-center space-x-3">
+                                                <img src="https://placehold.co/64x40/F3F4F6/9CA3AF?text=Omni" alt="Small Ambulance" class="w-16 h-10 object-cover rounded">
+                                                <div>
+                                                    <h3 class="font-semibold text-gray-900">Small</h3>
+                                                    <p class="text-xs text-gray-600">Omni / Eco Vehicle</p>
+                                                </div>
+                                            </div>
+                                            <div class="text-right flex-shrink-0">
+                                                <p class="text-sm font-semibold text-pink-600">30 mins</p>
+                                                <p class="text-lg font-bold text-indigo-600">₹ 500</p>
+                                            </div>
+                                        </div>
+                                        <div class="mt-3">
+                                            <p class="text-xs text-gray-600">Includes: First Aid Kit, Oxygen cylinder, Stretcher, Wheelchai...</p>
+                                            <a href="#" class="text-xs text-indigo-600 font-semibold hover:underline" onclick="event.stopPropagation()">See More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+
+                        <!-- Option: Large -->
+                        <div>
+                            <input type="radio" name="ambulance_type" id="amb_large" class="hidden ambulance-option">
+                            <label for="amb_large" class="block bg-white rounded-lg shadow-sm p-4 border-2 border-transparent cursor-pointer transition-all duration-300">
+                                <div class="flex space-x-3">
+                                    <div class="flex-shrink-0 w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-xs">9</div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between items-start">
+                                            <div class="flex items-center space-x-3">
+                                                <img src="https://placehold.co/64x40/F3F4F6/9CA3AF?text=Tempo" alt="Large Ambulance" class="w-16 h-10 object-cover rounded">
+                                                <div>
+                                                    <h3 class="font-semibold text-gray-900">Large</h3>
+                                                    <p class="text-xs text-gray-600">Tempo Traveller</p>
+                                                </div>
+                                            </div>
+                                            <div class="text-right flex-shrink-0">
+                                                <p class="text-sm font-semibold text-pink-600">27 mins</p>
+                                                <p class="text-lg font-bold text-indigo-600">₹ 1500</p>
+                                            </div>
+                                        </div>
+                                        <div class="mt-3">
+                                            <p class="text-xs text-gray-600">Includes: First Aid Kit, Oxygen cylinder, Stretcher,...</p>
+                                            <a href="#" class="text-xs text-indigo-600 font-semibold hover:underline" onclick="event.stopPropagation()">See More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+
+                        <!-- Option: Advanced Life Support (ALS) -->
+                        <div>
+                            <input type="radio" name="ambulance_type" id="amb_als" class="hidden ambulance-option">
+                            <label for="amb_als" class="block bg-white rounded-lg shadow-sm p-4 border-2 border-transparent cursor-pointer transition-all duration-300">
+                                <div class="flex space-x-3">
+                                    <div class="flex-shrink-0 w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-xs">16</div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between items-start">
+                                            <div class="flex items-center space-x-3">
+                                                <img src="https://placehold.co/64x40/F3F4F6/9CA3AF?text=ALS" alt="ALS Ambulance" class="w-16 h-10 object-cover rounded">
+                                                <div>
+                                                    <h3 class="font-semibold text-gray-900">Advanced Life Support (ALS)</h3>
+                                                    <p class="text-xs text-gray-600">Tempo Traveller</p>
+                                                </div>
+                                            </div>
+                                            <div class="text-right flex-shrink-0">
+                                                <p class="text-sm font-semibold text-pink-600">24 mins</p>
+                                                <p class="text-lg font-bold text-indigo-600">₹ 3000</p>
+                                            </div>
+                                        </div>
+                                        <div class="mt-3">
+                                            <p class="text-xs text-gray-600">Includes: First Aid Kit, Oxygen cylinder, Advanced ...</p>
+                                            <a href="#" class="text-xs text-indigo-600 font-semibold hover:underline" onclick="event.stopPropagation()">See More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+
+                        <!-- Option: Basic Life Support (BLS) -->
+                        <div>
+                            <input type="radio" name="ambulance_type" id="amb_bls" class="hidden ambulance-option">
+                            <label for="amb_bls" class="block bg-white rounded-lg shadow-sm p-4 border-2 border-transparent cursor-pointer transition-all duration-300">
+                                <div class="flex space-x-3">
+                                    <div class="flex-shrink-0 w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-xs">9</div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between items-start">
+                                            <div class="flex items-center space-x-3">
+                                                <img src="https://placehold.co/64x40/F3F4F6/9CA3AF?text=BLS" alt="BLS Ambulance" class="w-16 h-10 object-cover rounded">
+                                                <div>
+                                                    <h3 class="font-semibold text-gray-900">Basic Life Support (BLS)</h3>
+                                                    <p class="text-xs text-gray-600">Tempo Traveller</p>
+                                                </div>
+                                            </div>
+                                            <div class="text-right flex-shrink-0">
+                                                <p class="text-sm font-semibold text-pink-600">462 mins</p>
+                                                <p class="text-lg font-bold text-indigo-600">₹ 2500</p>
+                                            </div>
+                                        </div>
+                                        <div class="mt-3">
+                                            <p class="text-xs text-gray-600">Includes: First Aid Kit, Oxygen cylinder, Stretcher, W...</p>
+                                            <a href="#" class="text-xs text-indigo-600 font-semibold hover:underline" onclick="event.stopPropagation()">See More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Book Now Button -->
+                <section class="mt-8">
+                    <button id="book-now-button" class="w-full bg-indigo-600 text-white font-semibold py-4 px-6 rounded-lg shadow-md hover:bg-indigo-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+                        Book Now
+                    </button>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Click Feedback Element -->
+    <div id="click-feedback" class="hidden fixed top-5 right-5 bg-blue-600 text-white p-3 rounded-lg shadow-lg z-50 transition-all duration-300">
+        <!-- Message will be inserted here by JS -->
+    </div>
+
+    <script>
+        // Simple script to provide feedback on click, without using alert()
+        
+        // Feedback element
+        const feedbackEl = document.getElementById('click-feedback');
+        
+        function showFeedback(message) {
+            feedbackEl.textContent = message;
+            feedbackEl.classList.remove('hidden', 'opacity-0');
+            feedbackEl.classList.add('opacity-100');
+
+            // Hide the message after 3 seconds
+            setTimeout(() => {
+                feedbackEl.classList.remove('opacity-100');
+                feedbackEl.classList.add('opacity-0');
+                // Wait for fade out before hiding
+                setTimeout(() => feedbackEl.classList.add('hidden'), 500);
+            }, 3000);
+        }
+
+        // Handle Ambulance Selection
+        document.querySelectorAll('.ambulance-option + label').forEach(label => {
+            label.addEventListener('click', () => {
+                const ambulanceType = label.querySelector('h3').textContent;
+                console.log('Selected:', ambulanceType);
+                showFeedback(`Selected: ${ambulanceType}`);
+            });
+        }); 
+			 // Handle Book Now Button Click
+         document.getElementById('book-now-button').addEventListener('click', (e) => {
+           e.preventDefault(); // Prevent form submission for demo
+    
+           console.log('Booking...');
+    
+          // In a real app, this would proceed to payment or a success screen
+          // showFeedback('Booking confirmed! (Demo only)');
+          window.location.href = '05-ambulance-booking-overview.html';
+        });	
+	</script>
+
+</body>
+</html>

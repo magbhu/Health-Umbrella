@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Umbrella - Call Us / Support</title>
+    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font from Google Fonts --><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .main-header-bg {
+            background: linear-gradient(to right, #6D28D9, #8B5CF6); /* Purple gradient from your app */
+        }
+        /* Custom styles for service cards */
+        .service-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1rem;
+            background-color: #fff;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease-in-out;
+            height: 100%; /* Ensure cards fill grid cell height */
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        .service-card img {
+            width: 80px; /* Adjust size as needed */
+            height: 80px; /* Adjust size as needed */
+            object-fit: contain; /* Keep aspect ratio without cropping */
+            margin-bottom: 0.75rem;
+            border-radius: 0.5rem; /* Slightly rounded images */
+        }
+        /* Added animation for pulsing call button */
+        @keyframes ping-slow {
+            75%, 100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+        .animate-ping-slow {
+            animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="flex flex-col lg:flex-row min-h-screen">
+        
+        <!-- Sidebar / Navigation --><!-- "Support" is the active item --><aside class="w-full lg:w-64 bg-white shadow-lg 
+                       order-2 lg:order-1 
+                       fixed bottom-0 left-0 z-50 lg:relative lg:h-screen 
+                       border-t border-gray-200 lg:border-t-0 lg:border-r">
+            
+            <!-- Logo (Desktop Only) --><div class="hidden lg:flex items-center justify-center h-20 shadow-sm space-x-2">
+                <img src="HU-Logo.jpg" 
+                     onerror="this.src='https://placehold.co/100x40/FFFFFF/4F46E5?text=HU&font=inter'"
+                     alt="Health Umbrella Logo" 
+                     class="h-10">
+                <span class="text-xl font-bold text-gray-800">Health Umbrella</span>
+            </div>
+
+            <!-- Navigation Menu --><nav class="flex justify-around lg:flex-col lg:mt-8">
+                
+                <!-- Nav Item: Home --><a href="01-homepage.html" class="flex flex-col items-center justify-center p-3 lg:flex-row lg:justify-start lg:px-6 lg:py-4 
+                                  text-gray-600 hover:bg-gray-100 hover:text-gray-900">
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                    <span class="text-xs mt-1 lg:text-base lg:mt-0 lg:ml-4">Home</span>
+                </a>
+
+                <!-- Nav Item: Wallet (REMOVED) -->
+                
+                <!-- Nav Item: My Bookings --><a href="08-booking-view.html" class="flex flex-col items-center justify-center p-3 lg:flex-row lg:justify-start lg:px-6 lg:py-4 
+                                  text-gray-600 hover:bg-gray-100 hover:text-gray-900">
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+                    <span class="text-xs mt-1 lg:text-base lg:mt-0 lg:ml-4">My Bookings</span>
+                </a>
+
+                <!-- Nav Item: Support (Active) --><a href="#" class="flex flex-col items-center justify-center p-3 lg:flex-row lg:justify-start lg:px-6 lg:py-4 
+                                  text-blue-600 font-semibold bg-blue-50 
+                                  lg:border-r-4 lg:border-blue-500">
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <span class="text-xs mt-1 lg:text-base lg:mt-0 lg:ml-4">Call Us</span>
+                </a>
+
+                <!-- Nav Item: Profile --><a href="09-profile-page.html" class="flex flex-col items-center justify-center p-3 lg:flex-row lg:justify-start lg:px-6 lg:py-4 
+                                  text-gray-600 hover:bg-gray-100 hover:text-gray-900">
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    <span class="text-xs mt-1 lg:text-base lg:mt-0 lg:ml-4">Profile</span>
+                </a>
+
+                <!-- Nav Item: Logout (NEW) --><a href="00-login-page.html" class="flex flex-col items-center justify-center p-3 lg:flex-row lg:justify-start lg:px-6 lg:py-4 
+                                  text-gray-600 hover:bg-gray-100 hover:text-gray-900">
+                    <!-- Logout Icon -->
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                    <span class="text-xs mt-1 lg:text-base lg:mt-0 lg:ml-4">Logout</span>
+                </a>
+
+            </nav>
+        </aside>
+
+        <!-- Main Content --><main class="flex-1 order-1 lg:order-2 
+                     pb-24 lg:pb-0"> <!-- Padding at bottom for mobile nav --><!-- Top Bar (Mobile Only) --><header class="bg-white shadow-sm p-4 flex items-center justify-between lg:hidden main-header-bg">
+                <a href="#" class="text-white">
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </a>
+                <h1 class="text-xl font-semibold text-white">Call Us</h1>
+                <div class="flex items-center space-x-3">
+                    <button class="text-white">
+                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                    </button>
+                    <button class="text-white">
+                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.37 21a2 2 0 0 1 3.26 0"></path></path></svg>
+                    </button>
+                </div>
+            </header>
+            
+            <!-- Main Content Area --><div class="max-w-4xl mx-auto p-4 md:p-8">
+
+                <!-- 1. Text Banner --><section class="mb-8 bg-white rounded-lg shadow-md p-6">
+                    <h2 class="text-xl font-bold text-gray-900 text-center">
+                        "single, trusted, and reliable digital platform that simplifies access to essential health, emergency, and ancillary services"
+                    </h2>
+                </section>
+
+                <!-- 2. Call Us Section --><section class="mb-8 bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center text-center">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Need Assistance?</h2>
+                    <div class="relative flex items-center justify-center w-36 h-36 rounded-full bg-blue-100 mb-6">
+                        <div class="absolute w-full h-full rounded-full bg-blue-200 animate-ping-slow"></div>
+                        <!-- ADDED 'call-button' class here -->
+                        <a href="tel:9489108108" class="relative z-10 w-28 h-28 rounded-full bg-blue-600 flex items-center justify-center shadow-lg call-button">
+                            <svg class="w-16 h-16 text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        </a>
+                    </div>
+                    <p class="text-xl font-semibold text-gray-800 mb-4">Call Us Directly</p>
+                    <a href="tel:9489108108" class="text-3xl font-extrabold text-indigo-600 hover:underline">9489 108 108</a>
+                    <p class="text-gray-600 mt-4">Our support team is available 24/7 to help you.</p>
+                </section>
+
+                <!-- 3. Services Grid --><section class="mb-8">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">Our Services</h2>
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <!-- Service 1: Doctor Consulting --><div class="service-card">
+                                <img src="Image-2-Doctor-Consulting.jpg" alt="Doctor Consulting" onerror="this.src='https://placehold.co/80x80/EBF8FF/3182CE?text=Doctor'">
+                                <span class="text-sm font-medium text-gray-700">Doctor Consulting</span>
+                            </div>
+                            <!-- Service 2: Female Doctor --><div class="service-card">
+                                <img src="Image-3-Female-Doctor.jpg" alt="Female Doctor" onerror="this.src='https://placehold.co/80x80/EBF8FF/3182CE?text=Medical'">
+                                <span class="text-sm font-medium text-gray-700">Medical Professional</span>
+                            </div>
+                            <!-- Service 3: Patient Transfer --><div class="service-card">
+                                <img src="Image-4-Patient-Transfer.jpg" alt="Patient Transfer" onerror="this.src='https://placehold.co/80x80/EBF8FF/3182CE?text=Transfer'">
+                                <span class="text-sm font-medium text-gray-700">Patient Transfer</span>
+                            </div>
+                            <!-- Service 4: Ambulance Vehicle --><div class="service-card">
+                                <img src="Image-5-Ambulance-Vehicle.png" alt="Ambulance Vehicle" onerror="this.src='https://placehold.co/80x80/EBF8FF/3182CE?text=Ambulance'">
+                                <span class="text-sm font-medium text-gray-700">Ambulance Services</span>
+                            </div>
+                            <!-- Service 5: Homecare Nurses --><div class="service-card">
+                                <img src="Image-6-Homecare-Nurses.jpg" alt="Homecare Nurses" onerror="this.src='https://placehold.co/80x80/EBF8FF/3182CE?text=Homecare'">
+                                <span class="text-sm font-medium text-gray-700">Homecare Nursing</span>
+                            </div>
+                            <!-- Service 6: Hospital Building --><div class="service-card">
+                                <img src="Image-7-Hospital-Building.jpg" alt="Hospital Building" onerror="this.src='https://placehold.co/80x80/EBF8FF/3182CE?text=Hospital'">
+                                <span class="text-sm font-medium text-gray-700">Hospitals & Clinics</span>
+                            </div>
+                            <!-- Service 7: Lab Scientist --><div class="service-card">
+                                <img src="Image-8-Lab-Scientist.jpg" alt="Lab Scientist" onerror="this.src='https://placehold.co/80x80/EBF8FF/3182CE?text=Lab'">
+                                <span class="text-sm font-medium text-gray-700">Laboratory Services</span>
+                            </div>
+                             <!-- Service 8: Emergency Placeholder --><div class="service-card bg-red-100 border border-red-200">
+                                <svg class="w-16 h-16 text-red-500 mb-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                                    <line x1="12" y1="9" x2="12" y2="13"></line>
+                                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                </svg>
+                                <span class="text-sm font-medium text-red-700">Emergency</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Click Feedback Element --><div id="click-feedback" class="hidden fixed top-5 right-5 bg-blue-600 text-white p-3 rounded-lg shadow-lg z-50 transition-all duration-300">
+        <!-- Message will be inserted here by JS --></div>
+
+    <script>
+        // WRAPPED SCRIPT IN DOMCONTENTLOADED LISTENER
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simple script to provide feedback on click, without using alert()
+            
+            // Feedback element
+            const feedbackEl = document.getElementById('click-feedback');
+            
+            function showFeedback(message) {
+                feedbackEl.textContent = message;
+                feedbackEl.classList.remove('hidden', 'opacity-0');
+                feedbackEl.classList.add('opacity-100');
+
+                // Hide the message after 3 seconds
+                setTimeout(() => {
+                    feedbackEl.classList.remove('opacity-100');
+                    feedbackEl.classList.add('opacity-0');
+                    // Wait for fade out before hiding
+                    setTimeout(() => feedbackEl.classList.add('hidden'), 500);
+                }, 3000);
+            }
+
+            // Add listeners to service cards for feedback
+            document.querySelectorAll('.service-card').forEach(card => {
+                card.addEventListener('click', (e) => {
+                    e.preventDefault(); // Prevent any default action if card were a link
+                    const serviceName = card.querySelector('span').textContent;
+                    console.log('Clicked service:', serviceName);
+                    showFeedback(`Redirecting to ${serviceName} details... (Demo only)`);
+                });
+            });
+
+            // Add listener to Call button for feedback
+            // Added a null check for safety
+            const callButton = document.querySelector('.call-button');
+            if (callButton) {
+                callButton.addEventListener('click', (e) => {
+                    e.preventDefault(); // Prevent actual call on demo
+                    console.log('Clicked Call Us');
+                    showFeedback('Initiating call to 9489 108 108... (Demo only)');
+                    // In a real app, window.location.href = 'tel:9489108108'; would be here
+                });
+            } else {
+                console.error("Call button '.call-button' not found!");
+            }
+        });
+    </script>
+
+</body>
+</html>
